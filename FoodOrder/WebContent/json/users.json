@@ -1,0 +1,5 @@
+[{"id":1,"username":"admin","password":"123","firstName":"Pera","lastName":"Peric","gender":"male", "dateOfBirth":"date", "role":"admin"},
+{"id":2,"username":"kupac","password":"123","firstName":"Mara","lastName":"Maric","gender":"female", "dateOfBirth":"date", "role":"kupac"},
+{"id":3,"username":"menadzer","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer"},
+{"id":4,"username":"dostavljac","password":"123","firstName":"Mika","lastName":"Mikic","gender":"male", "dateOfBirth":"date", "role":"dostavljac"},
+{"id":5,"username":"kupac","password":"123","firstName":"Pera","lastName":"Peric","gender":"male", "dateOfBirth":"date", "role":"kupac"}]

@@ -2,6 +2,7 @@ package beans;
 
 public class User {
 	
+	private int id;
 	private String username;  //jednistveno
 	private String password;
 	private String firstName;
@@ -27,6 +28,32 @@ public class User {
 		this.gender = gender;
 		this.dateOfBirth = dateOfBirth;
 		this.role = role;
+	}
+	
+	
+
+
+	public User(int id, String username, String password, String firstName, String lastName, String gender,
+			String dateOfBirth, String role) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.dateOfBirth = dateOfBirth;
+		this.role = role;
+	}
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 
