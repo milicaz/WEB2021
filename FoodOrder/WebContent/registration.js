@@ -9,12 +9,12 @@ $(document).ready(function () {
 		let gender = $('input[name = "pol"]').val()
 		let dateOfBirth = $('input[name = "datum_rodjenja"]').val()
 
-        alert("Korisnicko ime je : " + username)
-		alert("Loznka je je : " + password)
-		alert("Ime je : " + firstName)
-		alert("Prezime je : " + lastName)
-		alert("Pol je : " + gender)
-		alert("Datum je : " + dateOfBirth)
+        //alert("Korisnicko ime je : " + username)
+		//alert("Loznka je je : " + password)
+		//alert("Ime je : " + firstName)
+		//alert("Prezime je : " + lastName)
+		//alert("Pol je : " + gender)
+		//alert("Datum je : " + dateOfBirth)
 		
 		$.post({
 			url : "rest/users/saveUser",
@@ -22,9 +22,10 @@ $(document).ready(function () {
 			contentType : "application/json",
 			success : function(data) {
 				alert("Usao je u success");
-				alert("Data je: " + data);
+				console.log("Data je: " + data);
 				if(data == null) {
 					alert("Postoji korisnik sa korisnickim imenom")
+					window.location = './registration.html'
 				} else {
 					alert("Korisnik je uspesno registrovan")
 				}

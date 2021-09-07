@@ -56,8 +56,7 @@ public class UserService {
 		
 		for(User u : us) {
 			if(u.getUsername().equals(user.getUsername())) {
-//				System.out.println("Usao je u if");
-				System.out.println("Postoji korisnik sa korisnickim imenom");	
+
 				return null;
 			}
 			
