@@ -1,46 +1,37 @@
 $(document).ready(function () {
-    let forma = $("form")
 
+    $('#registration').submit(function (event) {
 
-    forma.submit(function (event) {
-
-        let username = $("input[name = korisnicko_ime]").val()
+        let username = $('input[name = "korisnicko_ime"]').val()
+		let password = $('input[name = "lozinka"]').val()
+		let firstName = $('input[name = "ime"]').val()
+		let lastName = $('input[name = "prezime"]').val()
+		let gender = $('input[name = "pol"]').val()
+		let dateOfBirth = $('input[name = "datum_rodjenja"]').val()
 
         alert("Korisnicko ime je : " + username)
+		alert("Loznka je je : " + password)
+		alert("Ime je : " + firstName)
+		alert("Prezime je : " + lastName)
+		alert("Pol je : " + gender)
+		alert("Datum je : " + dateOfBirth)
+		
+		$.post({
+			url : "rest/users/saveUser",
+			data : JSON.stringify({username, password, firstName, lastName, gender, dateOfBirth}),
+			contentType : "application/json",
+			success : function(data) {
+				alert("Usao je u success");
+				alert("Data je: " + data);
+				if(data == null) {
+					alert("Postoji korisnik sa korisnickim imenom")
+				} else {
+					alert("Korisnik je uspesno registrovan")
+				}
+			}
+		})
 
-        $.ajax({
-            type: "get",
-            url: "rest/users/allUsers",
-            contentType: "application/json",
-            success: function (user) {
-                for (let u in user) {
-                    if (username == user[u].username) {
-                        alert("Ucitano korisnicko ime je: " + user[u].username)
-                        alert("Postoji korisnik sa korisnickim imenom")
-                        return
-                    }
 
-                }
-                $.ajax({
-                    type: "post",
-                    url: "rest/users/saveUser",
-                    data: JSON.stringify({
-                        "username": $("input[name = korisnicko_ime]").val(),
-                        "password": $("input[name = lozinka]").val(),
-                        "firstName": $("input[name = ime]").val(),
-                        "lastName": $("input[name = prezime]").val(),
-                        "gender": $("input[name = pol]").val(),
-                        "dateOfBirth": $("input[name = datum_rodjenja]").val()
-                    }),
-					contentType : "application/json",
-					dataType: "application/json",
-                    success: function (data) {
-                        alert("Korisnik je uspesno registrovan")
-                        alert("data je : " + data)
-                    }
-                })
-            }
-        })
 
     })
 });

@@ -51,6 +51,18 @@ public class UserService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public User saveUser(User user) {
 		UserDAOJson dao = (UserDAOJson) ctx.getAttribute("userDAO");
+		
+		Collection<User> us = dao.findAll();
+		
+		for(User u : us) {
+			if(u.getUsername().equals(user.getUsername())) {
+//				System.out.println("Usao je u if");
+				System.out.println("Postoji korisnik sa korisnickim imenom");	
+				return null;
+			}
+			
+		}
+		
 		return dao.saveUser(user);
 	}
 	
