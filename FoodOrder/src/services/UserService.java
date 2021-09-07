@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -51,6 +52,25 @@ public class UserService {
 	public User saveUser(User user) {
 		UserDAOJson dao = (UserDAOJson) ctx.getAttribute("userDAO");
 		return dao.saveUser(user);
+	}
+	
+	@POST
+	@Path("/login")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public User loginUser(User user, @Context HttpServletRequest request) {
+		UserDAOJson dao = (UserDAOJson) ctx.getAttribute("userDAO");
+		
+		User us = dao.login(user.getUsername(), user.getPassword());
+		
+		if(us != null) {
+			request.getSession().setAttribute("loggedUser", us);
+			System.out.println("User je " + us.getUsername());
+			return us;
+		}
+		
+		return null;
+		
 	}
 	
 }

@@ -58,13 +58,6 @@ public class UserDAOJson {
 				users.put(u.getId(), u);
 				System.out.println("Korisnici su: " + users);
 			}
-			
-		} catch (JsonParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -94,6 +87,21 @@ public class UserDAOJson {
 			}
 		}
 		return id;
+		
+	}
+	
+	//Logovanje
+	public User login(String username, String password) {
+		
+		for(User u : users.values()) {
+			if(u.getUsername().equals(username)) {
+				if(u.getPassword().equals(password)) {
+					return u;
+				}
+			}
+		}
+		
+		return null;
 		
 	}
 	
