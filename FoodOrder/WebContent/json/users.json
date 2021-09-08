@@ -3,5 +3,5 @@
 {"id":3,"username":"menadzer","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer"},
 {"id":4,"username":"dostavljac","password":"123","firstName":"Mika","lastName":"Mikic","gender":"male", "dateOfBirth":"date", "role":"dostavljac"},
 {"id":5,"username":"kupac1","password":"123","firstName":"Pera","lastName":"Peric","gender":"male", "dateOfBirth":"date", "role":"kupac"},
-{"id":3,"username":"menadzer1","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer"},
-{"id":3,"username":"menadzer2","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer"}]
+{"id":6,"username":"menadzer1","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer"},
+{"id":7,"username":"menadzer2","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer"}]
