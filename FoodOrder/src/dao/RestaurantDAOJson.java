@@ -66,5 +66,10 @@ public class RestaurantDAOJson {
 	public Collection<Restaurant> findAll() {
 		return restorani.values();
 	}
+	
+	public Restaurant findOne(int id) {
+		
+		return restorani.containsKey(id) ? restorani.get(id) : null;
+	}
 
 }
