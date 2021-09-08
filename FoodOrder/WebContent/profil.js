@@ -29,6 +29,36 @@ $(document).ready(function(){
 				$("#pol").val(user.gender)
 				$("#datum").val(user.dateOfBirth)
 				$("#uloga").val(user.role)
+				
+				
+				
+				$("#izmena").submit(function(event){
+					event.preventDefault()
+					
+					let id = $("#id").val()
+					console.log("Id je: " + id)
+					let username = $("#korisnicko_ime").val()
+					let password = $("#lozinka").val()
+					let firstName = $("#ime").val()
+					let lastName = $("#prezime").val()
+					let gender = $("#pol").val()
+					let dateOfBirth = $("#datum").val()
+					let role = $("#uloga").val()
+					
+					$("#izmena").attr("hidden",true);
+					$.ajax({
+						url : "rest/users/updateProfil",
+						type : "PUT",
+						data : JSON.stringify({id, username, password,
+						firstName, lastName, gender, dateOfBirth, role
+						}),
+						contentType : "application/json",
+						success : function(data) {
+							alert("Usao je u success")
+							window.location = './profil.html'
+						}
+					})
+				})
 			})
 		}
 	})

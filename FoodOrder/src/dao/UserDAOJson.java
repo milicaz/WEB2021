@@ -78,6 +78,11 @@ public class UserDAOJson {
 		return user;	
 	}
 	
+	public User updateUser(User user) {
+		users.replace(user.getId(), user);
+		return user;
+	}
+	
 	//Generisanje novog id-a
 	public int newId() {
 		int id = 1;
