@@ -28,6 +28,22 @@ $(document).ready(function() {
 					window.location = './login.html'
 				} else if(data != null){
 					alert("Korisnik je registrovan")
+					$.get({
+						url : "rest/users/getLogged",
+						contentType : "application/json",
+						success : function(user) {
+							alert("User je : " + user.role)
+							if(user.role == "admin"){
+								window.location = './adminPage.html'
+							} else if(user.role == "kupac"){
+								window.location = './buyerPage.html'
+							} else if(user.role == "menadzer"){
+								window.location = './managerPage.html'
+							} else if(user.role == "dostavljac"){
+								window.location = './deliveryPage.html'
+							}
+						}
+					})
 				} 
 			}
 		})

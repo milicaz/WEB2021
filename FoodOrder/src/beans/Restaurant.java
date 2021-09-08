@@ -10,6 +10,7 @@ public class Restaurant {
 	private ArrayList<Item> items = new ArrayList<Item>();
 	private Location location;
 	private byte[] logo;
+	private String manager;
 	
 	public Restaurant() {
 		super();
@@ -24,6 +25,28 @@ public class Restaurant {
 		this.items = items;
 		this.location = location;
 		this.logo = logo;
+	}
+	
+	
+
+	public Restaurant(String name, String type, boolean status, ArrayList<Item> items, Location location, byte[] logo,
+			String manager) {
+		super();
+		this.name = name;
+		this.type = type;
+		this.status = status;
+		this.items = items;
+		this.location = location;
+		this.logo = logo;
+		this.manager = manager;
+	}
+
+	public String getManager() {
+		return manager;
+	}
+
+	public void setManager(String manager) {
+		this.manager = manager;
 	}
 
 	public String getName() {

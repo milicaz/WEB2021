@@ -28,6 +28,8 @@ $(document).ready(function () {
 					window.location = './registration.html'
 				} else {
 					alert("Korisnik je uspesno registrovan")
+					window.location = './registration.html'
+					
 				}
 			}
 		})

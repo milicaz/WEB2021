@@ -84,4 +84,11 @@ public class UserService {
 		
 	}
 	
+	@GET
+	@Path("/getLogged")
+	@Produces(MediaType.APPLICATION_JSON)
+	public User getLogged(User user, @Context HttpServletRequest req) {
+		return (User) req.getSession().getAttribute("loggedUser");
+	}
+	
 }
