@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Restaurant {
 	
+	private int id;
 	private String name;
 	private String type;
 	private boolean status;
@@ -28,10 +29,13 @@ public class Restaurant {
 	}
 	
 	
+	
+	
 
-	public Restaurant(String name, String type, boolean status, ArrayList<Item> items, Location location, byte[] logo,
-			String manager) {
+	public Restaurant(int id, String name, String type, boolean status, ArrayList<Item> items, Location location,
+			byte[] logo, String manager) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.type = type;
 		this.status = status;
@@ -39,6 +43,14 @@ public class Restaurant {
 		this.location = location;
 		this.logo = logo;
 		this.manager = manager;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getManager() {

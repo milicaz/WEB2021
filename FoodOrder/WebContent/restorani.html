@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="jquery-3.3.1.min.js"></script>
+<script src="restorani.js"></script>
+<title>Restorani</title>
+</head>
+<body>
+
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<ul class="navbar-nav ml-auto">
+				<li><a href="restorani.html" class="nav-link">Restorani</a></li>
+			</ul>
+			<ul class="navbar-nav navbar-collapse justify-content-end">
+				<li><a href="registration.html" class="nav-link">Registracija</a></li>
+				<li><a href="login.html" class="nav-link">Login</a></li>
+
+			</ul>
+		</nav>
+
+	</header>
+	
+	<div class = "container">
+	<br>
+	<h2 align="center">Restorani</h2>
+	<br>
+	
+	<form id="form_pretraga" class="form-group">
+			<table>
+				<tr>Pretraga: </tr>
+				<tr><input type="text" id="pretraga" name="pretraga"></tr>
+			</table>
+	</form>
+	<br>
+	<form id="restorani">
+		<table id="tabela" class="table table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Ime</th>
+					<th>Tip</th>
+					<th>Status</th>
+					<th>Artikli</th>
+					<th>G. duzina</th>
+					<th>G. sirina</th>
+					<th>Adresa</th>
+					<th>Grad</th>
+					<th>Postanski broj</th>
+					<th>Logo</th>
+					<th>Menadzer</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</form>
+	</div>
+</body>
+</html>
