@@ -13,6 +13,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import com.sun.media.jfxmedia.Media;
 
@@ -102,6 +103,20 @@ public class UserService {
 		UserDAOJson dao = (UserDAOJson) ctx.getAttribute("userDAO");
 		request.getSession().setAttribute("loggedUser", user);
 		return dao.updateUser(user);
+		
+	}
+	
+	@POST
+	@Path("/logout")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response logout(@Context HttpServletRequest request) {
+		
+		request.getSession().invalidate();
+		
+		System.out.println("Korisnik je uspesno izlogovan");
+		
+		return Response.ok().build();
 		
 	}
 	
