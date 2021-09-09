@@ -26,5 +26,25 @@
 		"price" : "500.00",
 		"kupacId" : "5",
 		"status" : "otkazana"
+	},
+	
+	{
+		"id" : "10000000003",
+		"orderItemId" : [4, 5],
+		"restaurantId" : "1",
+		"datum" : "datum",
+		"price" : "500.00",
+		"kupacId" : "2",
+		"status" : "u transportu"
+	},
+	
+	{
+		"id" : "10000000004",
+		"orderItemId" : [6, 7],
+		"restaurantId" : "2",
+		"datum" : "datum",
+		"price" : "500.00",
+		"kupacId" : "8",
+		"status" : "ceka dostavljaca"
 	}
 ]

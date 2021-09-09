@@ -5,4 +5,6 @@
 {"id":5,"username":"kupac1","password":"123","firstName":"Pera","lastName":"Peric","gender":"male", "dateOfBirth":"date", "role":"kupac"},
 {"id":6,"username":"menadzer1","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer", "restoranId" : "2"},
 {"id":7,"username":"menadzer2","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer", "restoranId" : "3"},
-{"id":8,"username":"kupac2","password":"123","firstName":"Pera","lastName":"Peric","gender":"male", "dateOfBirth":"date", "role":"kupac"}]
+{"id":8,"username":"kupac2","password":"123","firstName":"Pera","lastName":"Peric","gender":"male", "dateOfBirth":"date", "role":"kupac"},
+{"id":9,"username":"dostavljac1","password":"123","firstName":"Mika","lastName":"Mikic","gender":"male", "dateOfBirth":"date", "role":"dostavljac"},
+{"id":10,"username":"dostavljac2","password":"123","firstName":"Mika","lastName":"Mikic","gender":"male", "dateOfBirth":"date", "role":"dostavljac"}]

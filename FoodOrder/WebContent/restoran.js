@@ -109,7 +109,7 @@ $(document).ready(function(){
 												url : "rest/users/oneUser/" + orderKupac,
 												contentType : "application/json",
 												success : function(kupac) {
-													alert("Usao je u kupac")
+													
 													
 															let tr = $('<tr></tr>');
 															let tdId = $('<td>' + kupac.id + '</td>');
