@@ -31,34 +31,100 @@ $(document).ready(function(){
 							$('#tabela tbody').append(tr);
 							
 							$.get({
-								url : "rest/orders/allOrders",
+								url : "rest/orders/allOrders/",
 								contentType : "application/json",
 								success : function(order) {
-									alert("usao je u success order")
+									
+									let orderKupac;
 									
 									for(let o in order) {
-										
-										alert("FOR  restaurantId je " + order[o].restaurantId)
-										alert("FOR rest id je " + rest[r].id)
+
 									
 										if(rest[r].id == order[o].restaurantId){
 											
-											alert("Usao je u if")
+											orderKupac = order[o].kupacId
+											let tr = $('<tr></tr>');
+											let tdId = $('<td>' + order[o].id + '</td>');
+											let tdArtikli = $('<td>' + order[o].orderItemId + '</td>');
+											let tdRestoran = $('<td>' + order[o].restaurantId + '</td>');
+											let tdDatum = $('<td>' + order[o].datum + '</td>');
+											let tdCena = $('<td>' + order[o].price + '</td>');
+											let tdKupac = $('<td>' + order[o].kupacId + '</td>');
+											let tdStatus = $('<td>' + order[o].status + '</td>');
 										
-										let tr = $('<tr></tr>');
-										let tdId = $('<td>' + order[o].id + '</td>');
-										let tdArtikli = $('<td>' + order[o].orderItemId + '</td>');
-										let tdRestoran = $('<td>' + order[o].restaurantId + '</td>');
-										let tdDatum = $('<td>' + order[o].datum + '</td>');
-										let tdCena = $('<td>' + order[o].price + '</td>');
-										let tdKupac = $('<td>' + order[o].kupacId + '</td>');
-										let tdStatus = $('<td>' + order[o].status + '</td>');
-										
-										tr.append(tdId).append(tdArtikli).append(tdRestoran).
-										append(tdDatum).append(tdCena).append(tdKupac).append(tdStatus);
-										$('#tabela_porudzbina tbody').append(tr);
+											tr.append(tdId).append(tdArtikli).append(tdRestoran).
+											append(tdDatum).append(tdCena).append(tdKupac).append(tdStatus);
+											$('#tabela_porudzbina tbody').append(tr);
+											
+											/*$.get({
+												url : "rest/users/allUsers",
+												contentType : "application/json",
+												success : function(kupac) {
+
+													for(let k in kupac) {
+														
+														if(kupac[k].id == order[o].kupacId){
+															
+															let tr = $('<tr></tr>');
+															let tdId = $('<td>' + kupac[k].id + '</td>');
+															let tdUsername = $('<td>' + kupac[k].username + '</td>');
+															let tdPassword = $('<td>' + kupac[k].password + '</td>');
+															let tdFName = $('<td>' + kupac[k].firstName + '</td>');
+															let tdLName = $('<td>' + kupac[k].lastName + '</td>');
+															let tdGender = $('<td>' + kupac[k].gender + '</td>');
+															let tdDate = $('<td>' + kupac[k].dateOfBirth + '</td>');
+															let tdRole = $('<td>' + kupac[k].role + '</td>');
+															tr.append(tdId).append(tdUsername).append(tdPassword).append(tdFName).
+															append(tdLName).append(tdGender).append(tdDate).append(tdRole);
+															$('#tabela_kupac tbody').append(tr);
+															
+														}
+													}
+												}
+											})*/
+											
+											/*$.get({
+												url : "rest/users/oneUser/" + order[o].kupacId,
+												contentType : "application/json",
+												success : function(kupac) {
+													alert("Usao je u kupac")
+													
+															let tr = $('<tr></tr>');
+															let tdId = $('<td>' + kupac.id + '</td>');
+															let tdUsername = $('<td>' + kupac.username + '</td>');
+															let tdPassword = $('<td>' + kupac.password + '</td>');
+															let tdFName = $('<td>' + kupac.firstName + '</td>');
+															let tdLName = $('<td>' + kupac.lastName + '</td>');
+															let tdGender = $('<td>' + kupac.gender + '</td>');
+															let tdDate = $('<td>' + kupac.dateOfBirth + '</td>');
+															let tdRole = $('<td>' + kupac.role + '</td>');
+															tr.append(tdId).append(tdUsername).append(tdPassword).append(tdFName).
+															append(tdLName).append(tdGender).append(tdDate).append(tdRole);
+															$('#tabela_kupac tbody').append(tr);
+												}
+											})*/
 									}
 									}
+									$.get({
+												url : "rest/users/oneUser/" + orderKupac,
+												contentType : "application/json",
+												success : function(kupac) {
+													alert("Usao je u kupac")
+													
+															let tr = $('<tr></tr>');
+															let tdId = $('<td>' + kupac.id + '</td>');
+															let tdUsername = $('<td>' + kupac.username + '</td>');
+															let tdPassword = $('<td>' + kupac.password + '</td>');
+															let tdFName = $('<td>' + kupac.firstName + '</td>');
+															let tdLName = $('<td>' + kupac.lastName + '</td>');
+															let tdGender = $('<td>' + kupac.gender + '</td>');
+															let tdDate = $('<td>' + kupac.dateOfBirth + '</td>');
+															let tdRole = $('<td>' + kupac.role + '</td>');
+															tr.append(tdId).append(tdUsername).append(tdPassword).append(tdFName).
+															append(tdLName).append(tdGender).append(tdDate).append(tdRole);
+															$('#tabela_kupac tbody').append(tr);
+												}
+											})
 								}
 							})
 						}

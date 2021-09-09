@@ -67,6 +67,15 @@ public class OrderDAOJson {
 		return orders.values();
 	}
 	
+	public Order findOne(int restaurantId) {
+		for(Order o : orders.values()) {
+			if(o.getRestaurantId() == restaurantId) {
+				return o;
+			}
+		}
+		return null;
+	}
+	
 	
 
 }

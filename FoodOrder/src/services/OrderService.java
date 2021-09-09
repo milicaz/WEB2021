@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.servlet.ServletContext;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -38,6 +39,14 @@ public class OrderService {
 	public Collection<Order> getOrders() {
 		OrderDAOJson dao = (OrderDAOJson) ctx.getAttribute("orderDAO");
 		return dao.findAll();
+	}
+	
+	@GET
+	@Path("/oneOrder/{restaurantId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Order getOrder(@PathParam("restaurantId") int restaurantId) {
+		OrderDAOJson dao = (OrderDAOJson) ctx.getAttribute("orderDAO");
+		return dao.findOne(restaurantId);
 	}
 
 }

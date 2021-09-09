@@ -110,6 +110,10 @@ public class UserDAOJson {
 		
 	}
 	
+	public User findOne(int id) {
+		return users.containsKey(id) ? users.get(id) : null;
+	}
+	
 	
 	
 
