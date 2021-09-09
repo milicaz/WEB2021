@@ -3,11 +3,17 @@ $(document).ready(function(){
 		url : "rest/users/getLogged",
 		contentType : "application/json",
 		success : function(user) {
+			
 			if(user.role == "admin"){
 				$("#admin").attr("hidden", false)
 			} else if(user.role == "menadzer") {
 				$("#menadzer").attr("hidden", false)
+			} else if(user.role == "kupac") {
+				$("#kupac").attr("hidden", false)
+			} else if(user.role == "dostavljac") {
+				$("#dostavljac").attr("hidden", false)
 			}
+			
 			console.log("Usao je u success")
 			let tr = $('<tr></tr>');
 			let tdId = $('<td>' + user.id + '</td>');

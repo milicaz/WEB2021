@@ -11,6 +11,17 @@ public class User {
 	private String dateOfBirth;
 	private String role;
 	
+	//Za menadzera
+	private int restoranId;
+	
+	//Za kupca
+	private int korpaId;
+	private int bodovi;
+	private int tipKupcaId;
+	
+	//Za dostavljaca
+	private int[] prodzbineId;
+	
 	
 	public User() {
 		super();
@@ -44,6 +55,28 @@ public class User {
 		this.gender = gender;
 		this.dateOfBirth = dateOfBirth;
 		this.role = role;
+	}
+	
+	
+
+
+	public User(int id, String username, String password, String firstName, String lastName, String gender,
+			String dateOfBirth, String role, int restoranId, int korpaId, int bodovi, int tipKupcaId,
+			int[] prodzbineId) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.dateOfBirth = dateOfBirth;
+		this.role = role;
+		this.restoranId = restoranId;
+		this.korpaId = korpaId;
+		this.bodovi = bodovi;
+		this.tipKupcaId = tipKupcaId;
+		this.prodzbineId = prodzbineId;
 	}
 
 
@@ -125,6 +158,58 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
+
+
+	public int getRestoranId() {
+		return restoranId;
+	}
+
+
+	public void setRestoranId(int restoranId) {
+		this.restoranId = restoranId;
+	}
+
+
+	public int getKorpaId() {
+		return korpaId;
+	}
+
+
+	public void setKorpaId(int korpaId) {
+		this.korpaId = korpaId;
+	}
+
+
+	public int getBodovi() {
+		return bodovi;
+	}
+
+
+	public void setBodovi(int bodovi) {
+		this.bodovi = bodovi;
+	}
+
+
+	public int getTipKupcaId() {
+		return tipKupcaId;
+	}
+
+
+	public void setTipKupcaId(int tipKupcaId) {
+		this.tipKupcaId = tipKupcaId;
+	}
+
+
+	public int[] getProdzbineId() {
+		return prodzbineId;
+	}
+
+
+	public void setProdzbineId(int[] prodzbineId) {
+		this.prodzbineId = prodzbineId;
+	}
+	
+	
 	
 	
 	
