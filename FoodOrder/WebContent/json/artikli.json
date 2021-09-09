@@ -2,10 +2,10 @@
 	{
 		"id" : "1",
 		"name" : "pljeskavica",
-		"price" : "200,00",
+		"price" : "200.00",
 		"type" : "jelo",
 		"restaurantId" : "3",
-		"amount" : "250,00",
+		"amount" : "250.00",
 		"description" : "opis",
 		"picture" : []
 	},
@@ -13,7 +13,7 @@
 	{
 		"id" : "2",
 		"name" : "pivo",
-		"price" : "100,00",
+		"price" : "100.00",
 		"type" : "pice",
 		"restaurantId" : "3",
 		"amount" : "1000",
@@ -24,10 +24,10 @@
 	{
 		"id" : "3",
 		"name" : "cevapi",
-		"price" : "200,00",
+		"price" : "200.00",
 		"type" : "jelo",
 		"restaurantId" : "3",
-		"amount" : "250,00",
+		"amount" : "250.00",
 		"description" : "opis",
 		"picture" : []
 	},
@@ -35,7 +35,7 @@
 	{
 		"id" : "4",
 		"name" : "voda",
-		"price" : "100,00",
+		"price" : "100.00",
 		"type" : "pice",
 		"restaurantId" : "1",
 		"amount" : "1000",
@@ -46,7 +46,7 @@
 	{
 		"id" : "5",
 		"name" : "pasta",
-		"price" : "400,00",
+		"price" : "400.00",
 		"type" : "hrana",
 		"restaurantId" : "1",
 		"amount" : "1000",
@@ -57,7 +57,7 @@
 	{
 		"id" : "6",
 		"name" : "piletina",
-		"price" : "400,00",
+		"price" : "400.00",
 		"type" : "hrana",
 		"restaurantId" : "2",
 		"amount" : "1000",
@@ -68,7 +68,7 @@
 	{
 		"id" : "7",
 		"name" : "sok",
-		"price" : "400,00",
+		"price" : "400.00",
 		"type" : "pice",
 		"restaurantId" : "1",
 		"amount" : "1000",

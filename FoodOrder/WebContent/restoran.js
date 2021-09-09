@@ -12,6 +12,8 @@ $(document).ready(function(){
 						
 						if(rest[r].manager == user.username){
 							
+							
+							
 							let tr = $('<tr></tr>');
 							let tdId = $('<td>' + rest[r].id + '</td>');
 							let tdName = $('<td>' + rest[r].name + '</td>');
