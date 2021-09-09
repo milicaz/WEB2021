@@ -3,16 +3,15 @@ $(document).ready(function(){
 		url : "rest/users/getLogged",
 		contentType : "application/json",
 		success : function(user) {
-			alert("Usao je u success")
-			alert("Menadzer je: " + user.username)
+			
 			$.get({
 				url : "rest/restaurants/allRest",
 				contentType : "application/json",
 				success : function(rest) {
 					for(let r in rest){
-						alert("restoran menadzer je " + rest[r].manager)
+						
 						if(rest[r].manager == user.username){
-							alert("Usao je u if")
+							
 							let tr = $('<tr></tr>');
 							let tdId = $('<td>' + rest[r].id + '</td>');
 							let tdName = $('<td>' + rest[r].name + '</td>');
@@ -30,6 +29,38 @@ $(document).ready(function(){
 							.append(tdArtikli).append(tdDuzina).append(tdSirina).append(tdAdresa).
 							append(tdGrad).append(tdZipCode).append(tdLogo).append(tdMenadzer);
 							$('#tabela tbody').append(tr);
+							
+							$.get({
+								url : "rest/orders/allOrders",
+								contentType : "application/json",
+								success : function(order) {
+									alert("usao je u success order")
+									
+									for(let o in order) {
+										
+										alert("FOR  restaurantId je " + order[o].restaurantId)
+										alert("FOR rest id je " + rest[r].id)
+									
+										if(rest[r].id == order[o].restaurantId){
+											
+											alert("Usao je u if")
+										
+										let tr = $('<tr></tr>');
+										let tdId = $('<td>' + order[o].id + '</td>');
+										let tdArtikli = $('<td>' + order[o].orderItemId + '</td>');
+										let tdRestoran = $('<td>' + order[o].restaurantId + '</td>');
+										let tdDatum = $('<td>' + order[o].datum + '</td>');
+										let tdCena = $('<td>' + order[o].price + '</td>');
+										let tdKupac = $('<td>' + order[o].kupacId + '</td>');
+										let tdStatus = $('<td>' + order[o].status + '</td>');
+										
+										tr.append(tdId).append(tdArtikli).append(tdRestoran).
+										append(tdDatum).append(tdCena).append(tdKupac).append(tdStatus);
+										$('#tabela_porudzbina tbody').append(tr);
+									}
+									}
+								}
+							})
 						}
 					}
 				}
