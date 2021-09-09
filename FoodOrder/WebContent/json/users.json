@@ -1,7 +1,8 @@
 [{"id":1,"username":"admin","password":"123","firstName":"Pera","lastName":"Peric","gender":"male", "dateOfBirth":"date", "role":"admin"},
 {"id":2,"username":"kupac","password":"123","firstName":"Mara","lastName":"Maric","gender":"female", "dateOfBirth":"date", "role":"kupac"},
-{"id":3,"username":"menadzer","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer"},
+{"id":3,"username":"menadzer","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer", "restoranId" : "1"},
 {"id":4,"username":"dostavljac","password":"123","firstName":"Mika","lastName":"Mikic","gender":"male", "dateOfBirth":"date", "role":"dostavljac"},
 {"id":5,"username":"kupac1","password":"123","firstName":"Pera","lastName":"Peric","gender":"male", "dateOfBirth":"date", "role":"kupac"},
-{"id":6,"username":"menadzer1","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer"},
-{"id":7,"username":"menadzer2","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer"}]
+{"id":6,"username":"menadzer1","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer", "restoranId" : "2"},
+{"id":7,"username":"menadzer2","password":"123","firstName":"Jovana","lastName":"Jovanovic","gender":"female", "dateOfBirth":"date", "role":"menadzer", "restoranId" : "3"},
+{"id":8,"username":"kupac2","password":"123","firstName":"Pera","lastName":"Peric","gender":"male", "dateOfBirth":"date", "role":"kupac"}]

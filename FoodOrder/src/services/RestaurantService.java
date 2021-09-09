@@ -11,6 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
+import beans.Cart;
 import beans.Restaurant;
 import dao.RestaurantDAOJson;
 
@@ -30,7 +31,7 @@ public class RestaurantService {
 			ctx.setAttribute("restaurantDAO", new RestaurantDAOJson(contextPath));
 		}
 	}
-	
+
 	@GET
 	@Path("/allRest")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -45,6 +46,14 @@ public class RestaurantService {
 	public Restaurant getRestaurant(@PathParam("id") int id) {
 		RestaurantDAOJson dao = (RestaurantDAOJson) ctx.getAttribute("restaurantDAO");
 		return dao.findOne(id);
+	}
+	
+	@GET
+	@Path("/allCart")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Collection<Cart> getCarts() {
+		RestaurantDAOJson dao = (RestaurantDAOJson) ctx.getAttribute("restaurantDAO");
+		return dao.findAllCart();
 	}
 	
 }

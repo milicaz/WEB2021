@@ -1,11 +1,14 @@
 package beans;
 
+import java.util.UUID;
+
 public class Item {
 
+	private int id;
 	private String name;
 	private double price;
 	private String type;
-	private Restaurant restaurant;
+	private int restaurantId;
 	private double amount;
 	private String description;
 	private byte[] picture;
@@ -15,13 +18,29 @@ public class Item {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Item(String name, double price, String type, Restaurant restaurant, double amount, String description,
+	public Item(String name, double price, String type, int restaurantId, double amount, String description,
 			byte[] picture) {
 		super();
 		this.name = name;
 		this.price = price;
 		this.type = type;
-		this.restaurant = restaurant;
+		this.restaurantId = restaurantId;
+		this.amount = amount;
+		this.description = description;
+		this.picture = picture;
+	}
+	
+	
+	
+
+	public Item(int id, String name, double price, String type, int restaurantId, double amount, String description,
+			byte[] picture) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.type = type;
+		this.restaurantId = restaurantId;
 		this.amount = amount;
 		this.description = description;
 		this.picture = picture;
@@ -51,14 +70,6 @@ public class Item {
 		this.type = type;
 	}
 
-	public Restaurant getRestaurant() {
-		return restaurant;
-	}
-
-	public void setRestaurant(Restaurant restaurant) {
-		this.restaurant = restaurant;
-	}
-
 	public double getAmount() {
 		return amount;
 	}
@@ -82,6 +93,25 @@ public class Item {
 	public void setPicture(byte[] picture) {
 		this.picture = picture;
 	}
+
+	public int getRestaurantId() {
+		return restaurantId;
+	}
+
+	public void setRestaurantId(int restaurantId) {
+		this.restaurantId = restaurantId;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
+	
 	
 	
 }

@@ -1,0 +1,45 @@
+[
+	{
+		"id" : "1",
+		"name" : "pljeskavica",
+		"price" : "200,00",
+		"type" : "jelo",
+		"restaurantId" : "3",
+		"amount" : "250,00",
+		"description" : "opis",
+		"picture" : []
+	},
+	
+	{
+		"id" : "2",
+		"name" : "pivo",
+		"price" : "100,00",
+		"type" : "pice",
+		"restaurantId" : "3",
+		"amount" : "1000",
+		"description" : "opis",
+		"picture" : []
+	},
+	
+	{
+		"id" : "3",
+		"name" : "cevapi",
+		"price" : "200,00",
+		"type" : "jelo",
+		"restaurantId" : "3",
+		"amount" : "250,00",
+		"description" : "opis",
+		"picture" : []
+	},
+	
+	{
+		"id" : "1",
+		"name" : "voda",
+		"price" : "100,00",
+		"type" : "pice",
+		"restaurantId" : "3",
+		"amount" : "1000",
+		"description" : "opis",
+		"picture" : []
+	}
+]

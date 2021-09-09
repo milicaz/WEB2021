@@ -3,14 +3,16 @@ package beans;
 import java.util.ArrayList;
 import java.util.Date;
 
+import dao.RestaurantDAOJson;
+
 public class Order {
 	
-	private int id;
-	private ArrayList<Item> orderedItems = new ArrayList<Item>();
-	private Restaurant restaurant;
-	private Date date;
+	private double id;
+	private int[] orderItemId;
+	private int restaurantId;
+	private String datum;
 	private double price;
-	// ime i prezime kupca ???
+	private int kupacId;
 	private String status;
 	
 	public Order() {
@@ -18,46 +20,29 @@ public class Order {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Order(int id, ArrayList<Item> orderedItems, Restaurant restaurant, Date date, double price, String status) {
+	
+
+
+	public Order(double id, int[] orderItemId, int restaurantId, String datum, double price, int kupacId, String status) {
 		super();
 		this.id = id;
-		this.orderedItems = orderedItems;
-		this.restaurant = restaurant;
-		this.date = date;
+		this.orderItemId = orderItemId;
+		this.restaurantId = restaurantId;
+		this.datum = datum;
 		this.price = price;
+		this.kupacId = kupacId;
 		this.status = status;
 	}
 
-	public int getId() {
+
+
+
+	public double getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(double id) {
 		this.id = id;
-	}
-
-	public ArrayList<Item> getOrderedItems() {
-		return orderedItems;
-	}
-
-	public void setOrderedItems(ArrayList<Item> orderedItems) {
-		this.orderedItems = orderedItems;
-	}
-
-	public Restaurant getRestaurant() {
-		return restaurant;
-	}
-
-	public void setRestaurant(Restaurant restaurant) {
-		this.restaurant = restaurant;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
 	}
 
 	public double getPrice() {
@@ -74,6 +59,58 @@ public class Order {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+
+	public int[] getOrderItemId() {
+		return orderItemId;
+	}
+
+
+	public void setOrderItemId(int[] orderItemId) {
+		this.orderItemId = orderItemId;
+	}
+
+
+
+
+	public int getRestaurantId() {
+		return restaurantId;
+	}
+
+
+
+
+	public void setRestaurantId(int restaurantId) {
+		this.restaurantId = restaurantId;
+	}
+
+
+
+
+	public String getDatum() {
+		return datum;
+	}
+
+
+
+
+	public void setDatum(String datum) {
+		this.datum = datum;
+	}
+
+
+
+
+	public int getKupacId() {
+		return kupacId;
+	}
+
+
+
+
+	public void setKupacId(int kupacId) {
+		this.kupacId = kupacId;
 	}
 	
 	
