@@ -23,7 +23,7 @@
 		</nav>
 
 	</header>
-	<div class="container">
+	<div id="div_porudzbina" class="container" hidden = "true">
 	<br>
 	<h2 align="center">Porudzbine koje cekaju dostavljaca</h2>
 	<br>
@@ -46,12 +46,35 @@
 	</form>
 	</div>
 	
-	<div class="container">
+	<div id="div_preuzete" class="container" hidden="true">
 	<br>
 	<h2 align="center">Preuzete porudzbine</h2>
 	<br>
 	<form id="preuzete">
 		<table id="tabela_preuzete" class="table table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>Id</th>
+					<th>Artikli</th>
+					<th>Restoran</th>
+					<th>Datum</th>
+					<th>Cena</th>
+					<th>Kupac</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</form>
+	</div>
+	
+	<div id="div_kupac" class="container" hidden="true">
+	<br>
+	<h2 align="center">Preuzete porudzbine</h2>
+	<br>
+	<form id="porudzbine_kupac">
+		<table id="tabela_kupac" class="table table-striped">
 			<thead class="thead-dark">
 				<tr>
 					<th>Id</th>
