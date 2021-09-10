@@ -28,7 +28,23 @@
 		"gender": "female",
 		"dateOfBirth": "date",
 		"role": "menadzer",
-		"restoranId": "1"
+		"restaurant": {
+			"id": "1",
+			"name": "Restoran1",
+			"type": "italijanski",
+			"status": "true",
+			"items": [],
+			"location": {
+				"longitude": "22.3",
+				"latitude": "26.7",
+				"street": "Ive Andrica",
+				"streetNumber": "33",
+				"city": "Novi Sad",
+				"zipCode": "21000"
+			},
+			"logo": "",
+			"manager": "menadzer"
+		}
 	},
 	{
 		"id": 4,
@@ -41,15 +57,16 @@
 		"role": "dostavljac",
 		"orders": [
 			{
-				
-				"id" : "10000000003",
-				"orderItemId" : [4, 5],
-				"restaurantId" : "1",
-				"datum" : "datum",
-				"price" : "500.00",
-				"kupacId" : "2",
-				"status" : "u transportu"
-
+				"id": "10000000003",
+				"orderItemId": [
+					4,
+					5
+				],
+				"restaurantId": "1",
+				"datum": "datum",
+				"price": "500.00",
+				"kupacId": "2",
+				"status": "u transportu"
 			}
 		]
 	},
@@ -72,7 +89,23 @@
 		"gender": "female",
 		"dateOfBirth": "date",
 		"role": "menadzer",
-		"restoranId": "2"
+		"restaurant": {
+			"id": "2",
+			"name": "Restoran2",
+			"type": "kineski",
+			"status": "false",
+			"items": [],
+			"location": {
+				"longitude": "32.3",
+				"latitude": "36.7",
+				"street": "Cirila i Metodija",
+				"streetNumber": "12",
+				"city": "Novi Sad",
+				"zipCode": "21000"
+			},
+			"logo": "",
+			"manager": "menadzer1"
+		}
 	},
 	{
 		"id": 7,
@@ -83,7 +116,23 @@
 		"gender": "female",
 		"dateOfBirth": "date",
 		"role": "menadzer",
-		"restoranId": "3"
+		"restaurant": {
+			"id": "3",
+			"name": "Restoran3",
+			"type": "rostilj",
+			"status": "true",
+			"items": [],
+			"location": {
+				"longitude": "42.3",
+				"latitude": "46.7",
+				"street": "Janka Veselinovica",
+				"streetNumber": "16",
+				"city": "Novi Sad",
+				"zipCode": "21000"
+			},
+			"logo": "",
+			"manager": "menadzer2"
+		}
 	},
 	{
 		"id": 8,

@@ -4,6 +4,26 @@ $(document).ready(function() {
 		contentType: "application/json",
 		success: function(user) {
 
+			if (user.role == "menadzer") {
+				let tr = $('<tr></tr>');
+				let tdId = $('<td>' + user.restaurant.id + '</td>');
+				let tdName = $('<td>' + user.restaurant.name + '</td>');
+				let tdTip = $('<td>' + user.restaurant.type + '</td>');
+				let tdStatus = $('<td>' + user.restaurant.status + '</td>');
+				let tdArtikli = $('<td>' + user.restaurant.items + '</td>');
+				let tdDuzina = $('<td>' + user.restaurant.location.longitude + '</td>');
+				let tdSirina = $('<td>' + user.restaurant.location.latitude + '</td>');
+				let tdAdresa = $('<td>' + user.restaurant.location.street + " " + user.restaurant.location.streetNumber + '</td>');
+				let tdGrad = $('<td>' + user.restaurant.location.city + '</td>');
+				let tdZipCode = $('<td>' + user.restaurant.location.zipCode + '</td>');
+				let tdLogo = $('<td>' + user.restaurant.logo + '</td>');
+				let tdMenadzer = $('<td>' + user.restaurant.manager + '</td>');
+				tr.append(tdId).append(tdName).append(tdTip).append(tdStatus)
+					.append(tdArtikli).append(tdDuzina).append(tdSirina).append(tdAdresa).
+					append(tdGrad).append(tdZipCode).append(tdLogo).append(tdMenadzer);
+				$('#tabela tbody').append(tr);
+			}
+
 			$.get({
 				url: "rest/restaurants/allRest",
 				contentType: "application/json",
@@ -13,7 +33,7 @@ $(document).ready(function() {
 						if (rest[r].manager == user.username) {
 
 
-							let tr = $('<tr></tr>');
+							/*let tr = $('<tr></tr>');
 							let tdId = $('<td>' + rest[r].id + '</td>');
 							let tdName = $('<td>' + rest[r].name + '</td>');
 							let tdTip = $('<td>' + rest[r].type + '</td>');
@@ -29,7 +49,7 @@ $(document).ready(function() {
 							tr.append(tdId).append(tdName).append(tdTip).append(tdStatus)
 								.append(tdArtikli).append(tdDuzina).append(tdSirina).append(tdAdresa).
 								append(tdGrad).append(tdZipCode).append(tdLogo).append(tdMenadzer);
-							$('#tabela tbody').append(tr);
+							$('#tabela tbody').append(tr);*/
 
 							$.get({
 								url: "rest/orders/allOrders/",
@@ -41,7 +61,7 @@ $(document).ready(function() {
 
 
 										if (rest[r].id == order[o].restaurantId) {
-											
+
 											orderKupac = order[o].kupacId
 											let tr = $('<tr></tr>');
 											let tdId = $('<td>' + order[o].id + '</td>');
