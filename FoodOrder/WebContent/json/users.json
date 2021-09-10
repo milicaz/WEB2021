@@ -33,7 +33,28 @@
 			"name": "Restoran1",
 			"type": "italijanski",
 			"status": "true",
-			"items": [],
+			"items": [
+				{
+					"id": "4",
+					"name": "voda",
+					"price": "100.00",
+					"type": "pice",
+					"restaurantId": "1",
+					"amount": "1000",
+					"description": "opis",
+					"picture": []
+				},
+				{
+					"id": "5",
+					"name": "pasta",
+					"price": "400.00",
+					"type": "hrana",
+					"restaurantId": "1",
+					"amount": "1000",
+					"description": "opis",
+					"picture": []
+				}
+			],
 			"location": {
 				"longitude": "22.3",
 				"latitude": "26.7",
@@ -58,14 +79,41 @@
 		"orders": [
 			{
 				"id": "10000000003",
-				"orderItemId": [
-					4,
-					5
+				"items": [
+					{
+						"id": "4",
+						"name": "voda",
+						"price": "100.00",
+						"type": "pice",
+						"restaurantId": "1",
+						"amount": "1000",
+						"description": "opis",
+						"picture": []
+					},
+					{
+						"id": "5",
+						"name": "pasta",
+						"price": "400.00",
+						"type": "hrana",
+						"restaurantId": "1",
+						"amount": "1000",
+						"description": "opis",
+						"picture": []
+					}
 				],
 				"restaurantId": "1",
 				"datum": "datum",
 				"price": "500.00",
-				"kupacId": "2",
+				"kupac": {
+					"id": 2,
+					"username": "kupac",
+					"password": "123",
+					"firstName": "Mara",
+					"lastName": "Maric",
+					"gender": "female",
+					"dateOfBirth": "date",
+					"role": "kupac"
+				},
 				"status": "u transportu"
 			}
 		]
@@ -94,7 +142,28 @@
 			"name": "Restoran2",
 			"type": "kineski",
 			"status": "false",
-			"items": [],
+			"items": [
+				{
+					"id": "6",
+					"name": "piletina",
+					"price": "400.00",
+					"type": "hrana",
+					"restaurantId": "2",
+					"amount": "1000",
+					"description": "opis",
+					"picture": []
+				},
+				{
+					"id": "7",
+					"name": "sok",
+					"price": "400.00",
+					"type": "pice",
+					"restaurantId": "2",
+					"amount": "1000",
+					"description": "opis",
+					"picture": []
+				}
+			],
 			"location": {
 				"longitude": "32.3",
 				"latitude": "36.7",
@@ -121,7 +190,38 @@
 			"name": "Restoran3",
 			"type": "rostilj",
 			"status": "true",
-			"items": [],
+			"items": [
+				{
+					"id": "1",
+					"name": "pljeskavica",
+					"price": "200.00",
+					"type": "jelo",
+					"restaurantId": "3",
+					"amount": "250.00",
+					"description": "opis",
+					"picture": []
+				},
+				{
+					"id": "2",
+					"name": "pivo",
+					"price": "100.00",
+					"type": "pice",
+					"restaurantId": "3",
+					"amount": "1000",
+					"description": "opis",
+					"picture": []
+				},
+				{
+					"id": "3",
+					"name": "cevapi",
+					"price": "200.00",
+					"type": "jelo",
+					"restaurantId": "3",
+					"amount": "250.00",
+					"description": "opis",
+					"picture": []
+				}
+			],
 			"location": {
 				"longitude": "42.3",
 				"latitude": "46.7",

@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	$("#pretraga").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-    $("#tabela tr").filter(function() {
+    $("#tabela tbody tr").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
@@ -12,13 +12,18 @@ $(document).ready(function(){
 		contentType : "application/json",
 		success : function(rest) {
 			for(let r in rest){
+				const artikli = []
+				for(let it in rest[r].items){
+					artikli.push(rest[r].items[it].name)
+					//artikli.push(" ")
+				}
 				if(rest[r].status == true){
 				let tr = $('<tr></tr>');
 				let tdId = $('<td>' + rest[r].id + '</td>');
 				let tdName = $('<td>' + rest[r].name + '</td>');
 				let tdTip = $('<td>' + rest[r].type + '</td>');
 				let tdStatus = $('<td>' + rest[r].status + '</td>');
-				let tdArtikli = $('<td>' + rest[r].items + '</td>');
+				let tdArtikli = $('<td>' + artikli + '<br>' +  '</td>');
 				let tdDuzina = $('<td>' + rest[r].location.longitude + '</td>');
 				let tdSirina = $('<td>' + rest[r].location.latitude + '</td>');
 				let tdAdresa = $('<td>' + rest[r].location.street + " " + rest[r].location.streetNumber + '</td>');
@@ -33,13 +38,17 @@ $(document).ready(function(){
 				}
 			}
 			for(let r in rest){
+				const art = []
+				for(let it in rest[r].items){
+					art.push(rest[r].items[it].name)
+				}
 				if(rest[r].status == false){
 				let tr = $('<tr></tr>');
 				let tdId = $('<td>' + rest[r].id + '</td>');
 				let tdName = $('<td>' + rest[r].name + '</td>');
 				let tdTip = $('<td>' + rest[r].type + '</td>');
 				let tdStatus = $('<td>' + rest[r].status + '</td>');
-				let tdArtikli = $('<td>' + rest[r].items + '</td>');
+				let tdArtikli = $('<td>' + art + '</td>');
 				let tdDuzina = $('<td>' + rest[r].location.longitude + '</td>');
 				let tdSirina = $('<td>' + rest[r].location.latitude + '</td>');
 				let tdAdresa = $('<td>' + rest[r].location.street + " " + rest[r].location.streetNumber + '</td>');

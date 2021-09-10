@@ -8,11 +8,11 @@ import dao.RestaurantDAOJson;
 public class Order {
 	
 	private double id;
-	private int[] orderItemId;
+	private ArrayList<Item> items = new ArrayList<Item>();
 	private int restaurantId;
 	private String datum;
 	private double price;
-	private int kupacId;
+	private User kupac;
 	private String status;
 	
 	public Order() {
@@ -21,20 +21,24 @@ public class Order {
 	}
 
 	
+	
+	
 
-
-	public Order(double id, int[] orderItemId, int restaurantId, String datum, double price, int kupacId, String status) {
+	public Order(double id, ArrayList<Item> items, int restaurantId, String datum, double price, User kupac,
+			String status) {
 		super();
 		this.id = id;
-		this.orderItemId = orderItemId;
+		this.items = items;
 		this.restaurantId = restaurantId;
 		this.datum = datum;
 		this.price = price;
-		this.kupacId = kupacId;
+		this.kupac = kupac;
 		this.status = status;
 	}
-	
-	
+
+
+
+
 
 	public double getId() {
 		return id;
@@ -59,18 +63,6 @@ public class Order {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
-
-	public int[] getOrderItemId() {
-		return orderItemId;
-	}
-
-
-	public void setOrderItemId(int[] orderItemId) {
-		this.orderItemId = orderItemId;
-	}
-
-
 
 
 	public int getRestaurantId() {
@@ -101,16 +93,35 @@ public class Order {
 
 
 
-	public int getKupacId() {
-		return kupacId;
+
+	public ArrayList<Item> getItems() {
+		return items;
 	}
 
 
 
 
-	public void setKupacId(int kupacId) {
-		this.kupacId = kupacId;
+
+	public void setItems(ArrayList<Item> items) {
+		this.items = items;
 	}
+
+
+
+
+
+	public User getKupac() {
+		return kupac;
+	}
+
+
+
+
+
+	public void setKupac(User kupac) {
+		this.kupac = kupac;
+	}
+
 	
 	
 	

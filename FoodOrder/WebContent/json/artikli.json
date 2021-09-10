@@ -70,7 +70,7 @@
 		"name" : "sok",
 		"price" : "400.00",
 		"type" : "pice",
-		"restaurantId" : "1",
+		"restaurantId" : "2",
 		"amount" : "1000",
 		"description" : "opis",
 		"picture" : []

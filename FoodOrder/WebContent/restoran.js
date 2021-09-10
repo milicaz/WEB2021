@@ -3,14 +3,26 @@ $(document).ready(function() {
 		url: "rest/users/getLogged",
 		contentType: "application/json",
 		success: function(user) {
-
+			alert("Usao je u success")
+			const artikli = []
+			 
 			if (user.role == "menadzer") {
+				alert("Usao je u if")
+				alert("user.restaurant.items" + user.restaurant)
+				for(let it in user.restaurant.items){
+					alert("Usao je u for")
+					alert("Ime je " + user.restaurant.items[it].name)
+					artikli.push(user.restaurant.items[it].name)
+				}
+				//alert("User restaurant items: " + user.restaurant.items[1])
 				let tr = $('<tr></tr>');
 				let tdId = $('<td>' + user.restaurant.id + '</td>');
 				let tdName = $('<td>' + user.restaurant.name + '</td>');
 				let tdTip = $('<td>' + user.restaurant.type + '</td>');
 				let tdStatus = $('<td>' + user.restaurant.status + '</td>');
-				let tdArtikli = $('<td>' + user.restaurant.items + '</td>');
+				
+				let tdArtikli = $('<td>' + artikli + '</td>');
+				
 				let tdDuzina = $('<td>' + user.restaurant.location.longitude + '</td>');
 				let tdSirina = $('<td>' + user.restaurant.location.latitude + '</td>');
 				let tdAdresa = $('<td>' + user.restaurant.location.street + " " + user.restaurant.location.streetNumber + '</td>');

@@ -55,13 +55,16 @@ $(document).ready(function(){
 					let gender = $("#pol").val()
 					let dateOfBirth = $("#datum").val()
 					let role = $("#uloga").val()
+					let restaurant = user.restaurant
+					let orders = user.orders
+					
 					
 					$("#izmena").attr("hidden",true);
 					$.ajax({
 						url : "rest/users/updateProfil",
 						type : "PUT",
 						data : JSON.stringify({id, username, password,
-						firstName, lastName, gender, dateOfBirth, role
+						firstName, lastName, gender, dateOfBirth, role, restaurant, orders
 						}),
 						contentType : "application/json",
 						success : function(data) {

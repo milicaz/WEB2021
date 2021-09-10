@@ -1,50 +1,227 @@
 [
 	{
-		"id" : "10000000000",
-		"orderItemId" : ["1", "2", "3"],
-		"restaurantId" : "3",
-		"datum" : "datum",
-		"price" : "500.00",
-		"kupacId" : "5",
-		"status" : "ceka dostavljaca"
+		"id": "10000000000",
+		"items": [
+			{
+				"id": "1",
+				"name": "pljeskavica",
+				"price": "200.00",
+				"type": "jelo",
+				"restaurantId": "3",
+				"amount": "250.00",
+				"description": "opis",
+				"picture": []
+			},
+			{
+				"id": "2",
+				"name": "pivo",
+				"price": "100.00",
+				"type": "pice",
+				"restaurantId": "3",
+				"amount": "1000",
+				"description": "opis",
+				"picture": []
+			},
+			{
+				"id": "3",
+				"name": "cevapi",
+				"price": "200.00",
+				"type": "jelo",
+				"restaurantId": "3",
+				"amount": "250.00",
+				"description": "opis",
+				"picture": []
+			}
+		],
+		"restaurantId": "3",
+		"datum": "datum",
+		"price": "500.00",
+		"kupac": {
+			"id": 5,
+			"username": "kupac1",
+			"password": "123",
+			"firstName": "Pera",
+			"lastName": "Peric",
+			"gender": "male",
+			"dateOfBirth": "date",
+			"role": "kupac"
+		},
+		"status": "ceka dostavljaca"
 	},
 	{
-		"id" : "10000000001",
-		"orderItemId" : [1, 2, 3],
-		"restaurantId" : "3",
-		"datum" : "datum",
-		"price" : "500.00",
-		"kupacId" : "5",
-		"status" : "dostavljena"
+		"id": "10000000001",
+		"items": [
+			{
+				"id": "1",
+				"name": "pljeskavica",
+				"price": "200.00",
+				"type": "jelo",
+				"restaurantId": "3",
+				"amount": "250.00",
+				"description": "opis",
+				"picture": []
+			},
+			{
+				"id": "2",
+				"name": "pivo",
+				"price": "100.00",
+				"type": "pice",
+				"restaurantId": "3",
+				"amount": "1000",
+				"description": "opis",
+				"picture": []
+			},
+			{
+				"id": "3",
+				"name": "cevapi",
+				"price": "200.00",
+				"type": "jelo",
+				"restaurantId": "3",
+				"amount": "250.00",
+				"description": "opis",
+				"picture": []
+			}
+		],
+		"restaurantId": "3",
+		"datum": "datum",
+		"price": "500.00",
+		"kupac": {
+			"id": 5,
+			"username": "kupac1",
+			"password": "123",
+			"firstName": "Pera",
+			"lastName": "Peric",
+			"gender": "male",
+			"dateOfBirth": "date",
+			"role": "kupac"
+		},
+		"status": "dostavljena"
 	},
-	
 	{
-		"id" : "10000000002",
-		"orderItemId" : [1, 2, 3],
-		"restaurantId" : "3",
-		"datum" : "datum",
-		"price" : "500.00",
-		"kupacId" : "5",
-		"status" : "otkazana"
+		"id": "10000000002",
+		"items": [
+			{
+				"id": "1",
+				"name": "pljeskavica",
+				"price": "200.00",
+				"type": "jelo",
+				"restaurantId": "3",
+				"amount": "250.00",
+				"description": "opis",
+				"picture": []
+			},
+			{
+				"id": "2",
+				"name": "pivo",
+				"price": "100.00",
+				"type": "pice",
+				"restaurantId": "3",
+				"amount": "1000",
+				"description": "opis",
+				"picture": []
+			},
+			{
+				"id": "3",
+				"name": "cevapi",
+				"price": "200.00",
+				"type": "jelo",
+				"restaurantId": "3",
+				"amount": "250.00",
+				"description": "opis",
+				"picture": []
+			}
+		],
+		"restaurantId": "3",
+		"datum": "datum",
+		"price": "500.00",
+		"kupac": {
+			"id": 5,
+			"username": "kupac1",
+			"password": "123",
+			"firstName": "Pera",
+			"lastName": "Peric",
+			"gender": "male",
+			"dateOfBirth": "date",
+			"role": "kupac"
+		},
+		"status": "otkazana"
 	},
-	
 	{
-		"id" : "10000000003",
-		"orderItemId" : [4, 5],
-		"restaurantId" : "1",
-		"datum" : "datum",
-		"price" : "500.00",
-		"kupacId" : "2",
-		"status" : "u transportu"
+		"id": "10000000003",
+		"items": [
+			{
+				"id": "4",
+				"name": "voda",
+				"price": "100.00",
+				"type": "pice",
+				"restaurantId": "1",
+				"amount": "1000",
+				"description": "opis",
+				"picture": []
+			},
+			{
+				"id": "5",
+				"name": "pasta",
+				"price": "400.00",
+				"type": "hrana",
+				"restaurantId": "1",
+				"amount": "1000",
+				"description": "opis",
+				"picture": []
+			}
+		],
+		"restaurantId": "1",
+		"datum": "datum",
+		"price": "500.00",
+		"kupac": {
+			"id": 2,
+			"username": "kupac",
+			"password": "123",
+			"firstName": "Mara",
+			"lastName": "Maric",
+			"gender": "female",
+			"dateOfBirth": "date",
+			"role": "kupac"
+		},
+		"status": "u transportu"
 	},
-	
 	{
-		"id" : "10000000004",
-		"orderItemId" : [6, 7],
-		"restaurantId" : "2",
-		"datum" : "datum",
-		"price" : "500.00",
-		"kupacId" : "8",
-		"status" : "ceka dostavljaca"
+		"id": "10000000004",
+		"items": [
+			{
+				"id": "6",
+				"name": "piletina",
+				"price": "400.00",
+				"type": "hrana",
+				"restaurantId": "2",
+				"amount": "1000",
+				"description": "opis",
+				"picture": []
+			},
+			{
+				"id": "7",
+				"name": "sok",
+				"price": "400.00",
+				"type": "pice",
+				"restaurantId": "2",
+				"amount": "1000",
+				"description": "opis",
+				"picture": []
+			}
+		],
+		"restaurantId": "2",
+		"datum": "datum",
+		"price": "500.00",
+		"kupac": {
+			"id": 8,
+			"username": "kupac2",
+			"password": "123",
+			"firstName": "Pera",
+			"lastName": "Peric",
+			"gender": "male",
+			"dateOfBirth": "date",
+			"role": "kupac"
+		},
+		"status": "ceka dostavljaca"
 	}
 ]

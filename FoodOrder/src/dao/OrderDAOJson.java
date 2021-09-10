@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import beans.Order;
+import beans.User;
 
 public class OrderDAOJson {
 	
@@ -76,9 +77,9 @@ public class OrderDAOJson {
 		return null;
 	}
 	
-	public Order findByKupacId(int kupacId) {
+	public Order findByKupacId(int id) {
 		for(Order o : orders.values()) {
-			if(o.getKupacId() == kupacId) {
+			if(o.getKupac().getId() == id) {
 				return o;
 			}
 		}
