@@ -3,15 +3,15 @@ $(document).ready(function() {
 		url: "rest/users/getLogged",
 		contentType: "application/json",
 		success: function(user) {
-			alert("Usao je u success")
+			//alert("Usao je u success")
 			const artikli = []
-			 
+
 			if (user.role == "menadzer") {
-				alert("Usao je u if")
-				alert("user.restaurant.items" + user.restaurant)
-				for(let it in user.restaurant.items){
-					alert("Usao je u for")
-					alert("Ime je " + user.restaurant.items[it].name)
+				//alert("Usao je u if")
+				//alert("user.restaurant.items" + user.restaurant)
+				for (let it in user.restaurant.items) {
+					//alert("Usao je u for")
+					//alert("Ime je " + user.restaurant.items[it].name)
 					artikli.push(user.restaurant.items[it].name)
 				}
 				//alert("User restaurant items: " + user.restaurant.items[1])
@@ -20,9 +20,9 @@ $(document).ready(function() {
 				let tdName = $('<td>' + user.restaurant.name + '</td>');
 				let tdTip = $('<td>' + user.restaurant.type + '</td>');
 				let tdStatus = $('<td>' + user.restaurant.status + '</td>');
-				
+
 				let tdArtikli = $('<td>' + artikli + '</td>');
-				
+
 				let tdDuzina = $('<td>' + user.restaurant.location.longitude + '</td>');
 				let tdSirina = $('<td>' + user.restaurant.location.latitude + '</td>');
 				let tdAdresa = $('<td>' + user.restaurant.location.street + " " + user.restaurant.location.streetNumber + '</td>');
@@ -34,9 +34,79 @@ $(document).ready(function() {
 					.append(tdArtikli).append(tdDuzina).append(tdSirina).append(tdAdresa).
 					append(tdGrad).append(tdZipCode).append(tdLogo).append(tdMenadzer);
 				$('#tabela tbody').append(tr);
+
+				$.get({
+					url: ""
+				})
+
+				$.get({
+					url: "rest/orders/allOrders",
+					contentType: "application/json",
+					success: function(order) {
+
+						
+						for(let o in order) {
+							for(let it in order[o].items){
+								console.log("Name " + order[o].items[it].name)
+								
+								
+							}
+						}
+
+						for (let o in order) {
+							if (user.restaurant.id == order[o].restaurantId) {
+								const art = []
+								for(let it in order[o].items){
+									
+									art.push(order[o].items[it].name)
+								}
+								orderKupac = order[o].kupac.id
+								let tr = $('<tr></tr>');
+								let tdId = $('<td>' + order[o].id + '</td>');
+								let tdArtikli = $('<td>' + art + '</td>');
+								let tdRestoran = $('<td>' + order[o].restaurantId + '</td>');
+								let tdDatum = $('<td>' + order[o].datum + '</td>');
+								let tdCena = $('<td>' + order[o].price + '</td>');
+								let tdKupac = $('<td>' + order[o].kupacId + '</td>');
+								let tdStatus = $('<td>' + order[o].status + '</td>');
+
+								tr.append(tdId).append(tdArtikli).append(tdRestoran).
+									append(tdDatum).append(tdCena).append(tdKupac).append(tdStatus);
+								$('#tabela_porudzbina tbody').append(tr);
+								
+							}
+						}
+
+						$.get({
+							url: "rest/users/oneUser/" + orderKupac,
+							contentType: "application/json",
+							success: function(kupac) {
+
+
+								let tr = $('<tr></tr>');
+								let tdId = $('<td>' + kupac.id + '</td>');
+								let tdUsername = $('<td>' + kupac.username + '</td>');
+								let tdPassword = $('<td>' + kupac.password + '</td>');
+								let tdFName = $('<td>' + kupac.firstName + '</td>');
+								let tdLName = $('<td>' + kupac.lastName + '</td>');
+								let tdGender = $('<td>' + kupac.gender + '</td>');
+								let tdDate = $('<td>' + kupac.dateOfBirth + '</td>');
+								let tdRole = $('<td>' + kupac.role + '</td>');
+								tr.append(tdId).append(tdUsername).append(tdPassword).append(tdFName).
+									append(tdLName).append(tdGender).append(tdDate).append(tdRole);
+								$('#tabela_kupac tbody').append(tr);
+							}
+						})
+
+					}
+
+
+				})
+
+
 			}
 
-			$.get({
+			/*$.get({
 				url: "rest/restaurants/allRest",
 				contentType: "application/json",
 				success: function(rest) {
@@ -45,7 +115,7 @@ $(document).ready(function() {
 						if (rest[r].manager == user.username) {
 
 
-							/*let tr = $('<tr></tr>');
+							let tr = $('<tr></tr>');
 							let tdId = $('<td>' + rest[r].id + '</td>');
 							let tdName = $('<td>' + rest[r].name + '</td>');
 							let tdTip = $('<td>' + rest[r].type + '</td>');
@@ -61,7 +131,7 @@ $(document).ready(function() {
 							tr.append(tdId).append(tdName).append(tdTip).append(tdStatus)
 								.append(tdArtikli).append(tdDuzina).append(tdSirina).append(tdAdresa).
 								append(tdGrad).append(tdZipCode).append(tdLogo).append(tdMenadzer);
-							$('#tabela tbody').append(tr);*/
+							$('#tabela tbody').append(tr);
 
 							$.get({
 								url: "rest/orders/allOrders/",
@@ -118,7 +188,7 @@ $(document).ready(function() {
 						}
 					}
 				}
-			})
+			})*/
 		}
 	})
 })
