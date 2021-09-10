@@ -11,6 +11,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import beans.Item;
+import beans.Order;
+import beans.User;
 
 public class ItemDAOJson {
 
@@ -66,5 +68,17 @@ public class ItemDAOJson {
 		return items.values();
 	}
 	
+	public Item findOne(int id) {
+		return items.containsKey(id) ? items.get(id) : null;
+	}
+	
+	public String findOneById(int id) {
+		for(Item i : items.values()) {
+			if(i.getId() == id) {
+				return i.getName();
+			}
+		}
+		return null;
+	}
 	
 }

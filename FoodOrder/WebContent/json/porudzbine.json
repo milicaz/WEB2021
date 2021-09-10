@@ -1,7 +1,7 @@
 [
 	{
 		"id" : "10000000000",
-		"orderItemId" : [1, 2, 3],
+		"orderItemId" : ["1", "2", "3"],
 		"restaurantId" : "3",
 		"datum" : "datum",
 		"price" : "500.00",

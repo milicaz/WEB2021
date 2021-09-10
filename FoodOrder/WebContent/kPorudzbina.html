@@ -2,9 +2,48 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="jquery-3.3.1.min.js"></script>
+<script src="kPorudzbina.js"></script>
+
+<title>Porudzbine</title>
 </head>
 <body>
 
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<ul class="navbar-nav ml-auto">
+				<li><a href="profil.html" class="nav-link">Profil</a></li>
+				<li><a href="kPorudzbina.html" class="nav-link">Porudzbine</a></li>
+			</ul>
+			<ul class="navbar-nav navbar-collapse justify-content-end">
+				<li><a href="logout.html" class="nav-link">Logout</a></li>
+
+			</ul>
+		</nav>
+
+	</header>
+	<div class="container">
+	<br>
+	<h2 align="center">Porudzbine</h2>
+	<br>
+	<form id="porudzbina">
+		<table id="tabela" class="table table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>Id</th>
+					<th>Artikli</th>
+					<th>Restoran</th>
+					<th>Datum</th>
+					<th>Cena</th>
+					<th>Kupac</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</form>
+	</div>
 </body>
 </html>

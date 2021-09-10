@@ -48,5 +48,13 @@ public class OrderService {
 		OrderDAOJson dao = (OrderDAOJson) ctx.getAttribute("orderDAO");
 		return dao.findOne(restaurantId);
 	}
+	
+	@GET
+	@Path("/orderByKupac/{kupacId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Order getOrderByKupac(@PathParam("kupacId") int kupacId) {
+		OrderDAOJson dao = (OrderDAOJson) ctx.getAttribute("orderDAO");
+		return dao.findByKupacId(kupacId);
+	}
 
 }

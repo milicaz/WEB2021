@@ -33,9 +33,8 @@ public class Order {
 		this.kupacId = kupacId;
 		this.status = status;
 	}
-
-
-
+	
+	
 
 	public double getId() {
 		return id;

@@ -76,6 +76,16 @@ public class OrderDAOJson {
 		return null;
 	}
 	
+	public Order findByKupacId(int kupacId) {
+		for(Order o : orders.values()) {
+			if(o.getKupacId() == kupacId) {
+				return o;
+			}
+		}
+		
+		return null;
+	}
+	
 	
 
 }
