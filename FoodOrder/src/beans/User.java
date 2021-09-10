@@ -1,5 +1,7 @@
 package beans;
 
+import java.util.ArrayList;
+
 public class User {
 	
 	private int id;
@@ -20,7 +22,7 @@ public class User {
 	private int tipKupcaId;
 	
 	//Za dostavljaca
-	private int[] prodzbineId;
+	private ArrayList<Order> orders = new ArrayList<Order>();
 	
 	
 	public User() {
@@ -58,11 +60,12 @@ public class User {
 	}
 	
 	
+	
 
 
 	public User(int id, String username, String password, String firstName, String lastName, String gender,
 			String dateOfBirth, String role, int restoranId, int korpaId, int bodovi, int tipKupcaId,
-			int[] prodzbineId) {
+			ArrayList<Order> orders) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -76,7 +79,7 @@ public class User {
 		this.korpaId = korpaId;
 		this.bodovi = bodovi;
 		this.tipKupcaId = tipKupcaId;
-		this.prodzbineId = prodzbineId;
+		this.orders = orders;
 	}
 
 
@@ -200,14 +203,17 @@ public class User {
 	}
 
 
-	public int[] getProdzbineId() {
-		return prodzbineId;
+	public ArrayList<Order> getOrders() {
+		return orders;
 	}
 
 
-	public void setProdzbineId(int[] prodzbineId) {
-		this.prodzbineId = prodzbineId;
+	public void setOrders(ArrayList<Order> orders) {
+		this.orders = orders;
 	}
+
+
+	
 	
 	
 	
