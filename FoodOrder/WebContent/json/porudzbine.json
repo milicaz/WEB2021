@@ -95,7 +95,8 @@
 			"dateOfBirth": "date",
 			"role": "kupac"
 		},
-		"status": "dostavljena"
+		"status": "dostavljena",
+		"dostavljacId" : "4"
 	},
 	{
 		"id": "1000000002",
@@ -144,7 +145,8 @@
 			"dateOfBirth": "date",
 			"role": "kupac"
 		},
-		"status": "otkazana"
+		"status": "otkazana",
+		"dostavljacId" : "4"
 	},
 	{
 		"id": "1000000003",
@@ -183,7 +185,8 @@
 			"dateOfBirth": "date",
 			"role": "kupac"
 		},
-		"status": "u transportu"
+		"status": "u transportu",
+		"dostavljacId" : "4"
 	},
 	{
 		"id": "1000000004",

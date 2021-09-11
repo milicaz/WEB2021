@@ -105,5 +105,10 @@ public class OrderDAOJson {
 		}
 		return null;
 	}
+	
+	public Order updateOrder(Order order) {
+		orders.replace(order.getId(), order);
+		return order;
+	}
 
 }
