@@ -2,18 +2,20 @@ package beans;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.UUID;
 
 import dao.RestaurantDAOJson;
 
 public class Order {
 	
-	private double id;
+	private String id;
 	private ArrayList<Item> items = new ArrayList<Item>();
 	private int restaurantId;
 	private String datum;
 	private double price;
 	private User kupac;
 	private String status;
+	private String zatrazeno;
 	
 	public Order() {
 		super();
@@ -21,11 +23,13 @@ public class Order {
 	}
 
 	
-	
-	
 
-	public Order(double id, ArrayList<Item> items, int restaurantId, String datum, double price, User kupac,
-			String status) {
+
+
+
+
+	public Order(String id, ArrayList<Item> items, int restaurantId, String datum, double price, User kupac,
+			String status, String zatrazeno) {
 		super();
 		this.id = id;
 		this.items = items;
@@ -34,17 +38,40 @@ public class Order {
 		this.price = price;
 		this.kupac = kupac;
 		this.status = status;
+		this.zatrazeno = zatrazeno;
+	}
+
+
+
+
+	
+
+
+	public String getZatrazeno() {
+		return zatrazeno;
 	}
 
 
 
 
 
-	public double getId() {
+
+
+	public void setZatrazeno(String zatrazeno) {
+		this.zatrazeno = zatrazeno;
+	}
+
+
+
+
+
+
+
+	public String getId() {
 		return id;
 	}
 
-	public void setId(double id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
