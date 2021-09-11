@@ -319,3 +319,70 @@ function upisati(id, username) {
         }
     })
 }
+
+function dostavljeno(porId, userId) {
+	alert("usao je u f-ju")
+	    $.get({
+        url: "rest/orders/newOrder/" + porId,
+        contentType: "application/json",
+        success: function(order) {
+            alert("Order id je " + order.id)
+
+            let id = order.id
+            let items = order.items
+            let restaurantId = order.restaurantId
+            let datum = order.datum
+            let price = order.price
+            let kupac = order.kupac
+            let status = "dostavljena"
+            let zatrazeno = order.zatrazeno
+            let dostavljacId = order.dostavljacId
+
+            $.ajax({
+                url: "rest/orders/updateOrder",
+                type : "PUT",
+                data: JSON.stringify({id, items, restaurantId, datum, price, kupac, status, zatrazeno, dostavljacId }),
+                contentType: "application/json",
+                success: function(data) {
+                    alert("Usao je u success")
+                }
+            })
+        }
+    })
+}
+
+function otkazi(id) {
+	$.get({
+        url: "rest/orders/newOrder/" + id,
+        contentType: "application/json",
+        success: function (order) {
+            alert("Order id je " + order.id)
+
+            let id = order.id
+            let items = order.items
+            let restaurantId = order.restaurantId
+            let datum = order.datum
+            let price = order.price
+            let kupac = order.kupac
+            let status = "otkazana"
+            let zatrazeno = order.zatrazeno
+            let dostavljacId = order.dostavljacId
+            let statusMenadzer = "otkazana"
+
+			alert("DostavljacId je " + dostavljacId)
+			alert("Odobreno je " + statusMenadzer)
+
+            $.ajax({
+                url: "rest/orders/updateOrder",
+                type: "PUT",
+                data: JSON.stringify({ id, items, restaurantId, datum, price, kupac, status, zatrazeno, dostavljacId, statusMenadzer }),
+                contentType: "application/json",
+				dataType : "application/json",
+                success: function (data) {
+                    alert("Usao je u success")
+                }
+            })
+
+        }
+    })
+}
