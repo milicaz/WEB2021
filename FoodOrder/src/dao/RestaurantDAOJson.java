@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import beans.Cart;
 import beans.Restaurant;
+import beans.User;
 
 public class RestaurantDAOJson {
 	
@@ -117,5 +118,24 @@ public class RestaurantDAOJson {
 	public Collection<Cart> findAllCart() {
 		return korpe.values();
 	}
+	
+	public Restaurant saveRest(Restaurant rest) {
+		int id = newId();
+		rest.setId(id);
+		restorani.put(rest.getId(), rest);
+		return rest;
+	}
+	
+	//Generisanje novog id-a
+		public int newId() {
+			int id = 1;
+			for(Restaurant r:restorani.values()) {
+				if(r.getId() == id) {
+					id++;
+				}
+			}
+			return id;
+			
+		}
 
 }

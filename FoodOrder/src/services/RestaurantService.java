@@ -4,7 +4,9 @@ import java.util.Collection;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.ServletContext;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -54,6 +56,15 @@ public class RestaurantService {
 	public Collection<Cart> getCarts() {
 		RestaurantDAOJson dao = (RestaurantDAOJson) ctx.getAttribute("restaurantDAO");
 		return dao.findAllCart();
+	}
+	
+	@POST
+	@Path("/save")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Restaurant save(Restaurant rest) {
+		RestaurantDAOJson dao = (RestaurantDAOJson) ctx.getAttribute("restaurantDAO");
+		return dao.saveRest(rest);
 	}
 	
 }
